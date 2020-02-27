@@ -1,0 +1,218 @@
+{
+	"title": "com.lanschool.student",
+	"description": "Lanschool Student Preferences",
+	"properties": {
+        "LogLevel": {
+            "title": "LogLevel",
+            "description": "Controls whether or not logs are created by the LanSchool Student software. These logs are helpful if you are having issues and seeking help from our Support team.",
+            "property_order": 5,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Logging Disabled", "Logging Enabled"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "Channel": {
+            "title": "Channel",
+            "description": "As with a TV station, every LanSchool student who is “tuned in” to the same teacher channel is visible by teachers on that same channel. The channel number must be a number between 1 and 16,000.",
+            "property_order": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "Authorization": {
+            "title": "Authorization",
+            "description": "Contains a one-way secure hash of the password for use in verification. Passwords are never stored. This value can be copied from  /Library/Preferences/com.lanschool.student.settings.plist for a student that has already been properly configured in Secure Mode.",
+            "property_order": 15,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "ClassroomServerAddress": {
+            "title": "ClassroomServerAddress",
+            "description": "Contains the name or IP address of your LanSchool Connection Service (LCS).  Examples of this value would be “192.168.2.200” or “LANSCHOOL-LCS”.  A static IP address for the LCS is preferred above a hostname or dynamic IP address.",
+            "property_order": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DetectTampering": {
+            "title": "DetectTampering",
+            "description": "Controls whether the LanSchool Student software detects Ethernet and wireless tampering. If activated, when a student unplugs the ethernet cable or turns off Airport, the screen will be locked periodically until connectivity is restored.",
+            "property_order": 25,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Do not detect", "Detect"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "StealthMode": {
+            "title": "StealthMode",
+            "description": "Controls whether the Student software hides the system menu bar item.",
+            "property_order": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Off", "On"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "AllowInternetMonitoring": {
+            "title": "AllowInternetMonitoring",
+            "description": "Controls whether the LanSchool Student software records website visits.",
+            "property_order": 35,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Do not allow", "Allow"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "AllowKeyboardMonitoring": {
+            "title": "AllowKeyboardMonitoring",
+            "description": "Allows the LanSchool Student software to record keystrokes.",
+            "property_order": 40,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Do not allow", "Allow"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "NotifyClassListLoad": {
+            "title": "NotifyClassListLoad",
+            "description": "Controls whether a student is notified when loaded into a class by a teacher.",
+            "property_order": 45,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Not Notified", "Notified"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "ssidWhitelist": {
+            "title": "ssidWhitelist",
+            "description": "Array of strings. Contains a list of wireless SSID (i.e. wireless network names) that the student computer should be connected to. If the student connects to a SSID that is not on this list and items on this list are available, the computer is locked periodically until a connection is made to one of the SSIDs on the list. ",
+            "property_order": 50,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ]
+        },
+        "AllowDumpUploads": {
+            "title": "AllowDumpUploads",
+            "description": "Controls whether or not crash log files are uploaded to our servers. Crash logs allow us to fix crashes in our software, and no private information is conveyed.",
+            "property_order": 55,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Do not allow", "Allow"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "ssidWhitelistEnabled": {
+            "title": "ssidWhitelistEnabled",
+            "description": "Controls whether the SSID whitelist above is used.",
+            "property_order": 60,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Not Used", "Used"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "SecureMode": {
+            "title": "SecureMode",
+            "description": "Controls whether the LanSchool Student software communicates with teachers who have entered the correct password in the LanSchool Teacher Console. See also Authorization.",
+            "property_order": 65,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Off", "On"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "InstallChromeExtension": {
+            "title": "InstallChromeExtension",
+            "description": "Controls whether the Web Helper Chrome extension is installed. This extension allows our software to collect web history and perform web limiting in Google Chrome.",
+            "property_order": 70,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Do not install", "Install"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        }
+	}
+}
