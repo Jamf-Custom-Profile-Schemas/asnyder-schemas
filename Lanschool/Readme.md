@@ -1,0 +1,1 @@
+Honestly Lenovo's preferences are all over the place. A lot of the time True means False and False means True. Reference https://helpdesk.lenovosoftware.com/portal/en/kb/articles/managing-lanschool-settings-for-macos-using-an-mdm for guidance.
