@@ -1,0 +1,122 @@
+{
+	"title": "com.lanschool.teacher",
+	"description": "Lanschool Teacher",
+	"properties": {
+        "DisableBrowseForStudents": {
+            "title": "DisableBrowseForStudents",
+            "description": "Controls whether the teacher can browse for students in order to create a class list. False = don’t allow, True = allow",
+            "property_order": 5,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableChannelSelect": {
+            "title": "EnableChannelSelect",
+            "description": "Controls whether or not the teacher can change her channel. False Cannot change channel, True can change channel",
+            "property_order": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AllowAudio": {
+            "title": "AllowAudio",
+            "description": "Controls whether the teacher can listen and talk to students via the console.",
+            "property_order": 15,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Don’t Allow", "Allow"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "AllowTaskmanLimiting": {
+            "title": "AllowTaskmanLimiting",
+            "description": "Controls whether the teacher can prevent Task Manager/Activity Monitor from running  on student computers. Note that this does not activate the feature but merely enables it. ",
+            "property_order": 20,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": ["Don’t Allow", "Allow"]
+                    },
+                    "enum": [0,1]
+                }
+            ]
+        },
+        "AlertOnUpdate": {
+            "title": "AlertOnUpdate",
+            "description": "Controls whether the teacher is alerted when there is an update to LanSchool. ",
+            "property_order": 25,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AutoApproveRemoteControl": {
+            "title": "AutoApproveRemoteControl",
+            "description": "Controls whether the teacher is asked for permission to be remote controlled by a LanSchool Tech Console. ",
+            "property_order": 30,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableDataTransmission": {
+            "title": "DisableDataTransmission",
+            "description": "Controls whether the teacher can change the network transport settings. True = cannot change, false = can change",
+            "property_order": 35,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NoRegistration": {
+            "title": "NoRegistration",
+            "description": "Controls whether or not the LanSchool Teacher Console prompts to register the product. False propts true does not prompt",
+            "property_order": 40,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableClassLists": {
+            "title": "DisableClassLists",
+            "description": "Controls whether the teacher can use class lists. False = don’t allow, true = allow for some reason",
+            "property_order": 45,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+	}
+}
