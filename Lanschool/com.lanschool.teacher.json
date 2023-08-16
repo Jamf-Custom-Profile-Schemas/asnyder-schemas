@@ -1,122 +1,312 @@
 {
 	"title": "com.lanschool.teacher",
-	"description": "Lanschool Teacher",
+	"description": "LanSchool Teacher Preferences",
 	"properties": {
-        "DisableBrowseForStudents": {
-            "title": "DisableBrowseForStudents",
-            "description": "Controls whether the teacher can browse for students in order to create a class list. False = don’t allow, True = allow",
-            "property_order": 5,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "EnableChannelSelect": {
-            "title": "EnableChannelSelect",
-            "description": "Controls whether or not the teacher can change her channel. False Cannot change channel, True can change channel",
-            "property_order": 10,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "AllowAudio": {
-            "title": "AllowAudio",
-            "description": "Controls whether the teacher can listen and talk to students via the console.",
-            "property_order": 15,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "integer",
-                    "options": {
-                        "enum_titles": ["Don’t Allow", "Allow"]
-                    },
-                    "enum": [0,1]
-                }
-            ]
-        },
-        "AllowTaskmanLimiting": {
-            "title": "AllowTaskmanLimiting",
-            "description": "Controls whether the teacher can prevent Task Manager/Activity Monitor from running  on student computers. Note that this does not activate the feature but merely enables it. ",
-            "property_order": 20,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "integer",
-                    "options": {
-                        "enum_titles": ["Don’t Allow", "Allow"]
-                    },
-                    "enum": [0,1]
-                }
-            ]
-        },
-        "AlertOnUpdate": {
-            "title": "AlertOnUpdate",
-            "description": "Controls whether the teacher is alerted when there is an update to LanSchool. ",
-            "property_order": 25,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "AutoApproveRemoteControl": {
-            "title": "AutoApproveRemoteControl",
-            "description": "Controls whether the teacher is asked for permission to be remote controlled by a LanSchool Tech Console. ",
-            "property_order": 30,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "DisableDataTransmission": {
-            "title": "DisableDataTransmission",
-            "description": "Controls whether the teacher can change the network transport settings. True = cannot change, false = can change",
-            "property_order": 35,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "NoRegistration": {
-            "title": "NoRegistration",
-            "description": "Controls whether or not the LanSchool Teacher Console prompts to register the product. False propts true does not prompt",
-            "property_order": 40,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "DisableClassLists": {
-            "title": "DisableClassLists",
-            "description": "Controls whether the teacher can use class lists. False = don’t allow, true = allow for some reason",
-            "property_order": 45,
-            "anyOf": [
-                {"type": "null", "title": "Not Configured"},
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        }
+		"SecureMode": {
+			"title": "SecureMode",
+			"description": "Controls whether the LanSchool Student software communicates with teachers who have entered the correct password in the LanSchool Teacher Console. See also Authorization. ",
+			"property_order": 5,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["off", "on"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"LogLevel": {
+			"title": "LogLevel",
+			"description": "Controls whether or not logs are created by the LanSchool Student software. These logs are helpful if you are having issues and seeking help from our Support team. ",
+			"property_order": 10,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Logging Disabled", "Logging Enabled"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"Channel": {
+			"title": "Channel",
+			"description": "As with a TV station, every LanSchool student who is “tuned in” to the same teacher channel is visible by teachers on that same channel. The channel number must be a number between 1 and 16,000",
+			"property_order": 15,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "string"
+				}
+			]
+		},
+		"AllowAudio": {
+			"title": "AllowAudio",
+			"description": "Controls whether the teacher can listen and talk to students via the console. ",
+			"property_order": 20,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Don’t Allow", "Allow"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"ssidWhitelistEnabled": {
+			"title": "ssidWhitelistEnabled",
+			"description": "Controls whether the SSID whitelis is used.",
+			"property_order": 25,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Not Used", "Used"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"DisableClassLists": {
+			"title": "DisableClassLists",
+			"description": "Controls whether the teacher can use class lists. false = don’ t allow true = allow ",
+			"property_order": 30,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"AllowDumpUploads": {
+			"title": "AllowDumpUploads",
+			"description": "Controls whether or not crash log files are uploaded to our servers. Crash logs allow us to fix crashes in our software, and no private information is conveyed. 0 = do not allow 1 = allow ",
+			"property_order": 35,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Don’t Allow", "Allow"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"AllowTaskmanLimiting ": {
+			"title": "AllowTaskmanLimiting ",
+			"description": "Controls whether the teacher can prevent Task Manager/Activity Monitor from running  on student computers. Note that this does not activate the feature but merely enables it. ",
+			"property_order": 40,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Don’t Allow", "Allow"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"AutoApproveRemoteControl ": {
+			"title": "AutoApproveRemoteControl ",
+			"description": "Controls whether the teacher is asked for permission to be remote controlled by a LanSchool Tech Console. false = don’ t allow true = allow ",
+			"property_order": 45,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"AllowInternetMonitoring": {
+			"title": "AllowInternetMonitoring",
+			"description": "Controls whether the LanSchool Student software records website visits. ",
+			"property_order": 50,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Don’t Allow", "Allow"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"DisableBrowseForStudents": {
+			"title": "DisableBrowseForStudents",
+			"description": "Controls whether the teacher can browse for students in order to create a class list. false = don’ t allow true = allow ",
+			"property_order": 55,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"ssidWhitelist": {
+			"title": "ssidWhitelist",
+			"description": "Contains a list of wireless SSID (i.e. wireless network names) that the student computer should be connected to. If the student connects to a SSID that is not on this list and items on this list are available, the computer is locked periodically until a connection is made to one of the SSIDs on the list.  ",
+			"property_order": 60,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"title": "Entries"
+					}
+				}
+			]
+		},
+		"AlertOnUpdate": {
+			"title": "AlertOnUpdate",
+			"description": "Controls whether the teacher is alerted when there is an update to LanSchool.  ",
+			"property_order": 65,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"EnableChannelSelect": {
+			"title": "EnableChannelSelect",
+			"description": "Controls whether or not the teacher can change her channel. false = cannot change channel true = can change channel ",
+			"property_order": 70,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"StealthMode": {
+			"title": "StealthMode",
+			"description": "Controls whether the Student software hides the system menu bar item. ",
+			"property_order": 75,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["off", "on"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		},
+		"ClassroomServerAddressAuthorization": {
+			"title": "ClassroomServerAddressAuthorization",
+			"description": "Contains the name or IP address of your LanSchool Connection Service (LCS).  Examples of this value would be “192.168.2.200” or “LANSCHOOL-LCS”.  A static IP address for the LCS is preferred above a hostname or dynamic IP address. ",
+			"property_order": 80,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "string"
+				}
+			]
+		},
+		"DisableDataTransmission": {
+			"title": "DisableDataTransmission",
+			"description": "Controls whether the teacher can change the network transport settings. true = cannot change false = can change ",
+			"property_order": 85,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"NoRegistration": {
+			"title": "NoRegistration",
+			"description": "Controls whether or not the LanSchool Teacher Console prompts to register the product. false = prompts true = does not prompt ",
+			"property_order": 90,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		},
+		"AllowKeyboardMonitoring": {
+			"title": "AllowKeyboardMonitoring",
+			"description": "Allows the LanSchool Student software to record keystrokes. ",
+			"property_order": 95,
+			"anyOf": [{
+					"type": "null",
+					"title": "Not Configured"
+				},
+				{
+					"title": "Configured",
+					"type": "integer",
+					"options": {
+						"enum_titles": ["Don’t Allow", "Allow"]
+					},
+					"enum": [0, 1]
+				}
+			]
+		}
 	}
 }
